@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
+    <style type="text/css">
+      #network {
+        #width:  1200px;
+        #height: 800px;
+        #border: 1px solid #000;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+  </head>
+  <body>
+    <div id="network"></div>
+    <script type="text/javascript">
+       var jsontext = '%s';
+       var json = JSON.parse(jsontext);
+       //console.log('data.json',json);
+       var nodes = new vis.DataSet( json.nodes );
+       var edges = new vis.DataSet( json.edges );
+       //console.log('nodes',nodes);
+       //console.log('edges',edges);
+       var container = document.getElementById('network');
+       //console.log('container',container);
+       var data = {
+         nodes: nodes,
+         edges: edges
+       };
+       //console.log('data',data);
+       var options = {
+       };
+       var network = new vis.Network(container, data, options);
+       //console.log('network',network);
+    </script>
+  </body>
+</html>

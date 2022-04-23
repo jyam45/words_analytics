@@ -1,0 +1,20 @@
+{
+  "nodes" : [
+    {"id": 1, "label": "A"},
+    {"id": 2, "label": "B"},
+    {"id": 3, "label": "C"},
+    {"id": 4, "label": "D"},
+    {"id": 6, "label": "F"},
+    {"id": 7, "label": "G"},
+    {"id": 8, "label": "H"}
+  ],
+
+  "edges" : [
+    {"from": 1, "to": 3, "arrows": "to"},
+    {"from": 3, "to": 4, "arrows": "to"},
+    {"from": 6, "to": 1, "arrows": "to"},
+    {"from": 7, "to": 8, "arrows": "to"},
+    {"from": 8, "to": 7, "arrows": "to"}
+  ]
+}
+ 

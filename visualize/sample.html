@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet">
+    <style type="text/css">
+      #network {
+        #width:  400px;
+        #height: 400px;
+        #border: 1px solid #000;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="network"></div>
+    <script type="text/javascript">
+      var nodes = new vis.DataSet([
+        {id: 1, label: 'A'},
+        {id: 2, label: 'B'},
+        {id: 3, label: 'C'},
+        {id: 4, label: 'D'},
+        {id: 5, label: 'E'},
+        {id: 6, label: 'F'},
+        {id: 7, label: 'G'},
+        {id: 8, label: 'H'},
+      ]);
+      var edges = new vis.DataSet([
+        {from: 1, to: 2, arrows: 'to'},
+        {from: 1, to: 3, arrows: 'to'},
+        {from: 3, to: 4, arrows: 'to'},
+        {from: 6, to: 1, arrows: 'to'},
+        {from: 7, to: 8, arrows: 'to'},
+        {from: 8, to: 7, arrows: 'to'},
+      ]);
+      console.log('nodes',nodes);
+      console.log('edges',edges);
+      var container = document.getElementById('network');
+      console.log('container',container);
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      console.log('data',data);
+      var options = {
+      };
+      var network = new vis.Network(container, data, options);
+      console.log('network',network);
+    </script>
+  </body>
+</html>
